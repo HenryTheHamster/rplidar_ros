@@ -18,14 +18,14 @@ def generate_launch_description():
     inverted = LaunchConfiguration('inverted', default='false')
     angle_compensate = LaunchConfiguration('angle_compensate', default='true')
     scan_mode = LaunchConfiguration('scan_mode', default='Sensitivity')
-    
+
     return LaunchDescription([
 
         DeclareLaunchArgument(
             'channel_type',
             default_value=channel_type,
             description='Specifying channel type of lidar'),
-        
+
         DeclareLaunchArgument(
             'serial_port',
             default_value=serial_port,
@@ -35,7 +35,7 @@ def generate_launch_description():
             'serial_baudrate',
             default_value=serial_baudrate,
             description='Specifying usb port baudrate to connected lidar'),
-        
+
         DeclareLaunchArgument(
             'frame_id',
             default_value=frame_id,
@@ -65,7 +65,7 @@ def generate_launch_description():
                          'serial_baudrate': serial_baudrate,
                          'frame_id': frame_id,
                          'inverted': inverted,
-                         'angle_compensate': angle_compensate}],
+                         'angle_compensate': angle_compensate,
+                         'scan_mode': scan_mode}],
             output='screen'),
     ])
-
